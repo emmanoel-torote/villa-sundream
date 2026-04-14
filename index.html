@@ -70,7 +70,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       background-color: var(--navy-deep);
-      background-image: url('images/hero.jpg');
+      background-image: url('images/Sundream_Render_Sala.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -222,9 +222,7 @@
     .fc-icon { font-size: 20px; margin-bottom: 20px; display: block; opacity: 0.6; }
     .fc-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--white); margin-bottom: 12px; }
     .fc-desc { font-size: 13px; line-height: 1.82; color: rgba(255,255,255,0.42); }
-    /* Developer card highlight */
     .fc.dev-card { border-top-color: var(--sky); background: var(--navy-mid); }
-    .fc.dev-card .fc-title { color: rgba(255,255,255,0.95); }
     .fc.dev-card .fc-desc { color: rgba(255,255,255,0.58); }
 
     /* ── PROGRESS ─────────────────────── */
@@ -285,7 +283,6 @@
     /* ── CTA / FORM ───────────────────── */
     .cta-section { padding: 100px 0; background: var(--navy); }
     .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-
     .price-eyebrow { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
     .price-amount {
       font-family: 'Cormorant Garamond', serif;
@@ -385,13 +382,13 @@
 
   <!-- TOPBAR -->
   <nav class="topbar">
-    <img class="topbar-logo" src="images/logo-light.png"
-      onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png?format=1500w'"
+    <img class="topbar-logo"
+      src="https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png?format=1500w"
       alt="Galta Development and Real Estate" />
     <a class="topbar-cta" href="#contact">Request a Private Briefing</a>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO — Render sala con vista al mar -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-inner">
@@ -412,7 +409,7 @@
     </div>
   </section>
 
-  <!-- INTRO — Developer pitch -->
+  <!-- INTRO -->
   <section class="intro">
     <div class="container fade-up">
       <div class="intro-inner">
@@ -420,7 +417,7 @@
           <div class="eyebrow">The Opportunity</div>
           <h2 class="stitle">Not a listing.<br /><em>Our own build.</em></h2>
           <p class="sbody">
-            Villa Sundream is a Galta-built residence — not a third-party listing. We designed it, we're constructing it, and we stand behind every detail of its delivery. That distinction matters: when you buy from us, you're buying direct from the developer with full transparency on costs, timelines, and quality.
+            Villa Sundream is a Galta-built residence — not a third-party listing. We designed it, we're constructing it, and we stand behind every detail of its delivery. When you buy from us, you buy direct from the developer: full transparency on costs, timelines, and quality.
           </p>
           <br />
           <p class="sbody">
@@ -441,11 +438,16 @@
   <!-- GALLERY -->
   <section class="gallery container fade-up">
     <div class="gallery-grid">
-      <div class="gi"><img src="images/gallery-1.jpg" alt="Villa Sundream — Exterior" /></div>
-      <div class="gi"><img src="images/gallery-2.jpg" alt="Villa Sundream — Pool and Terrace" /></div>
-      <div class="gi"><img src="images/gallery-3.jpg" alt="Villa Sundream — Ocean View" /></div>
-      <div class="gi"><img src="images/gallery-4.jpg" alt="Villa Sundream — Interior Living Area" /></div>
-      <div class="gi"><img src="images/gallery-5.jpg" alt="Villa Sundream — Construction Progress" /></div>
+      <!-- Large left: render aéreo con letrero Pedregal -->
+      <div class="gi"><img src="images/Sundream_Render_Aereo.jpg" alt="Villa Sundream — Vista aérea Pedregal" /></div>
+      <!-- Top right: render alberca y terraza -->
+      <div class="gi"><img src="images/Sundream_Render_Alberca.jpg" alt="Villa Sundream — Alberca y terraza" /></div>
+      <!-- Mid right: vista real desde la obra -->
+      <div class="gi"><img src="images/Sundream_Vista_Real.jpg" alt="Villa Sundream — Vista real bahía y marina" /></div>
+      <!-- Bottom mid: render fachada posterior -->
+      <div class="gi"><img src="images/Sundream_Render_Fachada_posterior.jpg" alt="Villa Sundream — Fachada posterior render" /></div>
+      <!-- Bottom right: interior real con vista -->
+      <div class="gi"><img src="images/Sundream-24.jpg" alt="Villa Sundream — Interior real con vista a la bahía" /></div>
     </div>
   </section>
 
@@ -457,14 +459,11 @@
         <h2 class="stitle-inv">Designed for <em>life at the top</em></h2>
       </div>
       <div class="features-grid fade-up">
-
-        <!-- Developer card — always highlighted -->
         <div class="fc dev-card">
           <span class="fc-icon">🏗</span>
           <div class="fc-title">Built by Galta — Direct from Developer</div>
-          <p class="fc-desc">This is Galta's own inventory — not an MLS listing. You negotiate directly with the developer. No middlemen, no markup layers, and full accountability on delivery. We've built it, and we stand behind it.</p>
+          <p class="fc-desc">This is Galta's own inventory — not an MLS listing. You negotiate directly with the developer. No middlemen, full accountability on delivery. We built it, and we stand behind it.</p>
         </div>
-
         <div class="fc">
           <span class="fc-icon">🌅</span>
           <div class="fc-title">Panoramic Ocean Views</div>
@@ -473,7 +472,7 @@
         <div class="fc">
           <span class="fc-icon">🛏</span>
           <div class="fc-title">7 Bedrooms + Family Room</div>
-          <p class="fc-desc">Each bedroom features its own ensuite bath. All levels connected by a private hydraulic elevator — a rare feature in Pedregal that commands a premium in the resale market.</p>
+          <p class="fc-desc">Each bedroom features its own ensuite bath. All levels connected by a private hydraulic elevator — a rare feature in Pedregal that commands a premium at resale.</p>
         </div>
         <div class="fc">
           <span class="fc-icon">🏊</span>
@@ -483,7 +482,7 @@
         <div class="fc">
           <span class="fc-icon">📈</span>
           <div class="fc-title">Pre-Construction Pricing Window</div>
-          <p class="fc-desc">At 70% completion, you're buying at today's price with a short wait. Upon delivery in June 2026, pricing shifts to finished market value. This window is closing — and it won't reopen.</p>
+          <p class="fc-desc">At 70% completion, you're buying at today's price with a short wait. Upon delivery in June 2026, pricing shifts to finished market value. This window is closing.</p>
         </div>
         <div class="fc">
           <span class="fc-icon">🔐</span>
@@ -502,7 +501,7 @@
           <div class="eyebrow">Construction Timeline</div>
           <h2 class="stitle">Delivery<br /><em>June 2026</em></h2>
           <p class="sbody">
-            At 70% completion, Villa Sundream is far enough along to evaluate finished quality — and early enough that pre-construction pricing still applies. As the developer, we publish our timeline and our progress transparently. No surprises.
+            At 70% completion, Villa Sundream is far enough along to evaluate finished quality — and early enough that pre-construction pricing still applies. As the developer, we publish our timeline and progress transparently. No surprises.
           </p>
           <div style="margin-top:32px;">
             <div class="pbar-label">
@@ -579,13 +578,12 @@
   <section class="cta-section" id="contact">
     <div class="container">
       <div class="cta-inner fade-up">
-
         <div>
           <div class="price-eyebrow">Investment</div>
           <div class="price-amount">$3,700,000</div>
           <div class="price-currency">USD — Direct from Developer</div>
           <p class="price-note">
-            Pre-construction pricing is only available while the property is under development. Upon delivery in June 2026, pricing reflects finished market value. Buying direct from Galta means no broker markup and full developer accountability.
+            Pre-construction pricing is only available while under development. Upon delivery in June 2026, pricing reflects finished market value. Buying direct from Galta means no broker markup and full developer accountability.
           </p>
           <div class="price-hls">
             <div class="price-hl">Direct from developer — no middlemen</div>
@@ -596,7 +594,6 @@
             <div class="price-hl">Strong short-term rental income potential</div>
           </div>
         </div>
-
         <div class="form-wrap">
           <form id="contactForm">
             <h3 class="form-title">Request a Private Briefing</h3>
@@ -626,7 +623,6 @@
             <p>We've received your inquiry. The Galta team will be in touch within 24 hours.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -635,8 +631,8 @@
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <img class="footer-logo" src="images/logo-light.png"
-          onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png?format=1500w'"
+        <img class="footer-logo"
+          src="https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png?format=1500w"
           alt="Galta Real Estate" />
         <div class="footer-contact">
           MX: <a href="tel:+526241570258">+52 624 157 0258</a> &nbsp;·&nbsp;
@@ -669,11 +665,11 @@
         date:     new Date().toISOString()
       };
 
-      // ── CONECTAR BACKEND DEL FORMULARIO ──────────────────────
+      // ── CONECTAR FORMULARIO ──────────────────────────────────
       // OPCIÓN A — Formspree (gratis, recomendado):
       //   1. Crea cuenta en formspree.io
-      //   2. Crea un form y copia el ID
-      //   3. Descomenta estas líneas y pega tu Form ID:
+      //   2. Crea un form → copia el ID
+      //   3. Descomenta y pega tu Form ID:
       //
       // fetch('https://formspree.io/f/TU_FORM_ID', {
       //   method: 'POST',
@@ -683,7 +679,7 @@
       //
       // OPCIÓN B — Webhook (Zapier / Make / n8n):
       // fetch('TU_WEBHOOK_URL', { method: 'POST', body: JSON.stringify(data) });
-      // ─────────────────────────────────────────────────────────
+      // ────────────────────────────────────────────────────────
 
       document.getElementById('contactForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
