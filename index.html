@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Villa Sundream — Pedregal, Cabo San Lucas | Galta Real Estate</title>
+  <meta name="description" content="Built by Galta. 7 BD | 9 BA | 4,610 sqft luxury villa in Pedregal. Unobstructed views of Cabo Bay, Marina & Pacific. Pre-construction pricing — $3,700,000 USD." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1d2b3a;
+      --navy-deep:  #151f2b;
+      --navy-mid:   #253244;
+      --navy-lt:    #2e3f52;
+      --steel:      #4a6070;
+      --sky:        #6b8fa8;
+      --body-bg:    #f5f4f0;
+      --border:     #dcd9d2;
+      --text:       #1d2b3a;
+      --text-mid:   #4a5a68;
+      --text-muted: #7a8a96;
+      --white:      #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--body-bg);
+      color: var(--text);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 36px; }
+
+    /* ── TOPBAR ───────────────────────── */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy);
+      height: 72px; padding: 0 36px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .topbar-logo { height: 38px; }
+    .topbar-cta {
+      background: transparent; color: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 24px;
+      border: 1px solid rgba(255,255,255,0.38);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .topbar-cta:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.7); }
+
+    /* ── HERO ─────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-color: var(--navy-deep);
+      background-image: url('images/hero.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-bg::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(21,31,43,0.15) 0%,
+        rgba(21,31,43,0.0) 28%,
+        rgba(21,31,43,0.58) 68%,
+        rgba(21,31,43,0.95) 100%
+      );
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse at 68% 32%, rgba(45,90,130,0.18) 0%, transparent 60%);
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      width: 100%; max-width: 1160px; margin: 0 auto;
+      padding: 0 36px 88px;
+    }
+    .hero-eyebrow {
+      font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: inline-block;
+      width: 36px; height: 1px; background: rgba(255,255,255,0.3);
+    }
+    h1.hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(58px, 8.5vw, 112px);
+      font-weight: 300; line-height: 0.94;
+      color: var(--white); margin-bottom: 10px;
+    }
+    h1.hero-title em { font-style: italic; color: rgba(255,255,255,0.68); }
+    .hero-tagline {
+      font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+      color: rgba(255,255,255,0.38); margin-bottom: 52px;
+    }
+    .hero-specs {
+      display: inline-flex;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+    .hs { padding: 18px 28px; border-right: 1px solid rgba(255,255,255,0.12); text-align: center; }
+    .hs:last-child { border-right: none; }
+    .hs-val {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 300;
+      color: var(--white); line-height: 1; margin-bottom: 4px;
+    }
+    .hs-key { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+    .scroll-hint {
+      position: absolute; bottom: 26px; right: 38px; z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .scroll-hint span { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.28); }
+    .scroll-line {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.45), transparent);
+      animation: spulse 2.4s ease-in-out infinite;
+    }
+    @keyframes spulse { 0%,100%{opacity:0.3;} 50%{opacity:0.85;} }
+
+    /* ── SHARED ───────────────────────── */
+    .eyebrow {
+      font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--sky); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .eyebrow::before { content: ''; display: inline-block; width: 24px; height: 1px; background: var(--sky); }
+    .eyebrow-inv {
+      font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-bottom: 14px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .eyebrow-inv::before { content: ''; display: inline-block; width: 24px; height: 1px; background: rgba(255,255,255,0.22); }
+    .stitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 300; line-height: 1.1;
+      color: var(--navy); margin-bottom: 24px;
+    }
+    .stitle em { font-style: italic; color: var(--steel); }
+    .stitle-inv {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 4vw, 52px);
+      font-weight: 300; line-height: 1.1;
+      color: var(--white); margin-bottom: 24px;
+    }
+    .stitle-inv em { font-style: italic; color: rgba(255,255,255,0.48); }
+    .sbody { font-size: 15px; line-height: 1.9; color: var(--text-mid); }
+
+    /* ── DEVELOPER BADGE ──────────────── */
+    .dev-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--navy); color: var(--white);
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 10px 18px; margin-top: 28px;
+    }
+    .dev-badge::before { content: '✦'; font-size: 8px; color: var(--sky); }
+
+    /* ── INTRO ────────────────────────── */
+    .intro { padding: 100px 0; border-bottom: 1px solid var(--border); }
+    .intro-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+    .stat-cell { background: var(--white); padding: 36px 28px; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 44px; font-weight: 300;
+      color: var(--navy); line-height: 1;
+      display: block; margin-bottom: 8px;
+    }
+    .stat-lbl { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* ── GALLERY ──────────────────────── */
+    .gallery { padding: 0 0 100px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 320px 320px;
+      gap: 3px;
+    }
+    .gi { overflow: hidden; background: var(--navy-mid); position: relative; }
+    .gi:first-child { grid-row: 1 / 3; }
+    .gi img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.55s ease; }
+    .gi:hover img { transform: scale(1.04); }
+
+    /* ── FEATURES ─────────────────────── */
+    .features { padding: 100px 0; background: var(--navy); }
+    .features-header { margin-bottom: 52px; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: rgba(255,255,255,0.07);
+    }
+    .fc {
+      background: var(--navy); padding: 40px 32px;
+      border-top: 2px solid transparent;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .fc:hover { background: var(--navy-mid); border-top-color: var(--sky); }
+    .fc-icon { font-size: 20px; margin-bottom: 20px; display: block; opacity: 0.6; }
+    .fc-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; color: var(--white); margin-bottom: 12px; }
+    .fc-desc { font-size: 13px; line-height: 1.82; color: rgba(255,255,255,0.42); }
+    /* Developer card highlight */
+    .fc.dev-card { border-top-color: var(--sky); background: var(--navy-mid); }
+    .fc.dev-card .fc-title { color: rgba(255,255,255,0.95); }
+    .fc.dev-card .fc-desc { color: rgba(255,255,255,0.58); }
+
+    /* ── PROGRESS ─────────────────────── */
+    .progress-section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+    .progress-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .pbar-label {
+      display: flex; justify-content: space-between;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 10px;
+    }
+    .pbar-track { height: 2px; background: var(--border); margin-bottom: 48px; }
+    .pbar-fill { height: 100%; width: 70%; background: var(--navy); }
+    .milestones { display: flex; flex-direction: column; }
+    .ms {
+      display: flex; align-items: center; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+      font-size: 13px; color: var(--text-muted);
+    }
+    .ms:last-child { border-bottom: none; }
+    .ms-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+    .ms.done .ms-dot { background: var(--navy); }
+    .ms.done { color: var(--text-mid); }
+    .ms.active .ms-dot { background: var(--sky); box-shadow: 0 0 8px rgba(107,143,168,0.6); }
+    .ms.active { color: var(--navy); font-weight: 500; }
+
+    /* ── AMENITIES ────────────────────── */
+    .amenities { padding: 100px 0; border-bottom: 1px solid var(--border); }
+    .amenities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 52px; }
+    .am {
+      background: var(--white); padding: 22px 20px;
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-mid);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .am::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--sky); flex-shrink: 0; }
+
+    /* ── LOCATION ─────────────────────── */
+    .location-section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+    .location-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .map-ph {
+      aspect-ratio: 4/3; background: var(--navy-mid);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 14px;
+    }
+    .map-ph span { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.22); }
+    .map-ph a { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); text-decoration: none; }
+    .map-ph a:hover { color: var(--white); }
+    .locs { margin-top: 32px; }
+    .loc {
+      display: flex; justify-content: space-between;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .loc:first-child { border-top: 1px solid var(--border); }
+    .loc-name { color: var(--text-mid); }
+    .loc-dist { color: var(--navy); font-weight: 500; font-size: 12px; letter-spacing: 0.06em; }
+
+    /* ── CTA / FORM ───────────────────── */
+    .cta-section { padding: 100px 0; background: var(--navy); }
+    .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+    .price-eyebrow { font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .price-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 300; color: var(--white);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .price-currency { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 36px; }
+    .price-note {
+      font-size: 14px; line-height: 1.85; color: rgba(255,255,255,0.48);
+      border-left: 2px solid var(--sky); padding-left: 20px; margin-bottom: 40px;
+    }
+    .price-hls { display: flex; flex-direction: column; gap: 14px; }
+    .price-hl { display: flex; align-items: center; gap: 12px; font-size: 13px; color: rgba(255,255,255,0.62); }
+    .price-hl::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--sky); flex-shrink: 0; }
+
+    .form-wrap { background: var(--white); padding: 48px 44px; }
+    .form-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--navy); margin-bottom: 6px; }
+    .form-subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 36px; }
+    .fg { margin-bottom: 20px; }
+    .fg label { display: block; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+    .fg input, .fg textarea {
+      width: 100%; background: var(--body-bg);
+      border: 1px solid var(--border); color: var(--text);
+      font-family: 'Jost', sans-serif; font-size: 14px; font-weight: 300;
+      padding: 13px 16px; outline: none;
+      transition: border-color 0.2s; border-radius: 0; appearance: none;
+    }
+    .fg input:focus, .fg textarea:focus { border-color: var(--navy); }
+    .fg input::placeholder, .fg textarea::placeholder { color: #b0aca4; }
+    .fg textarea { resize: vertical; min-height: 96px; }
+    .form-submit {
+      width: 100%; background: var(--navy); color: var(--white);
+      font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 18px 32px; border: none; cursor: pointer;
+      transition: background 0.2s; margin-top: 6px;
+    }
+    .form-submit:hover { background: var(--navy-lt); }
+    .form-privacy { font-size: 11px; color: var(--text-muted); margin-top: 14px; text-align: center; }
+    .form-success { display: none; text-align: center; padding: 52px 20px; }
+    .form-success-icon { font-size: 36px; margin-bottom: 16px; color: var(--sky); }
+    .form-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--navy); margin-bottom: 8px; }
+    .form-success p { font-size: 14px; color: var(--text-muted); }
+
+    /* ── FOOTER ───────────────────────── */
+    footer { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.07); padding: 48px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+    .footer-logo { height: 28px; }
+    .footer-contact { font-size: 12px; color: rgba(255,255,255,0.38); }
+    .footer-contact a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.18); }
+
+    /* ── WHATSAPP ─────────────────────── */
+    .wa {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      width: 54px; height: 54px; border-radius: 50%;
+      background: #25d366;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.45); }
+    .wa svg { width: 26px; height: 26px; fill: #fff; }
+
+    /* ── ANIMATIONS ───────────────────── */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ───────────────────── */
+    @media (max-width: 900px) {
+      .intro-inner, .cta-inner, .progress-inner, .location-inner { grid-template-columns: 1fr; gap: 48px; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .amenities-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gi:first-child { grid-row: auto; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .topbar { padding: 0 20px; height: 64px; }
+      .topbar-logo { height: 30px; }
+      .hero-inner { padding: 0 20px 64px; }
+      .hero-specs { flex-direction: column; width: 100%; }
+      .hs { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .hs:last-child { border-bottom: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .gi:first-child { grid-row: auto; }
+      .form-wrap { padding: 32px 24px; }
+      .amenities-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <nav class="topbar">
+    <img class="topbar-logo" src="images/logo-light.png"
+      onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png?format=1500w'"
+      alt="Galta Development and Real Estate" />
+    <a class="topbar-cta" href="#contact">Request a Private Briefing</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Pedregal de Cabo San Lucas &nbsp;·&nbsp; Built by Galta</div>
+      <h1 class="hero-title">Villa<br /><em>Sundream</em></h1>
+      <p class="hero-tagline">We build what we sell — zero construction risk, proven delivery</p>
+      <div class="hero-specs">
+        <div class="hs"><span class="hs-val">7</span><span class="hs-key">Bedrooms</span></div>
+        <div class="hs"><span class="hs-val">9</span><span class="hs-key">Bathrooms</span></div>
+        <div class="hs"><span class="hs-val">4,610</span><span class="hs-key">Sq Ft</span></div>
+        <div class="hs"><span class="hs-val">840 m²</span><span class="hs-key">Lot Size</span></div>
+        <div class="hs"><span class="hs-val">$3.7M</span><span class="hs-key">USD</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- INTRO — Developer pitch -->
+  <section class="intro">
+    <div class="container fade-up">
+      <div class="intro-inner">
+        <div>
+          <div class="eyebrow">The Opportunity</div>
+          <h2 class="stitle">Not a listing.<br /><em>Our own build.</em></h2>
+          <p class="sbody">
+            Villa Sundream is a Galta-built residence — not a third-party listing. We designed it, we're constructing it, and we stand behind every detail of its delivery. That distinction matters: when you buy from us, you're buying direct from the developer with full transparency on costs, timelines, and quality.
+          </p>
+          <br />
+          <p class="sbody">
+            Positioned just below the iconic Pedregal sign, the villa commands unobstructed panoramic views of Cabo San Lucas Bay, the Marina, and the Pacific. Part of an exclusive enclave of only five high-end residences — one of the last opportunities to enter Pedregal at pre-construction pricing.
+          </p>
+          <div class="dev-badge">Built &amp; Sold Directly by Galta Real Estate</div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-cell"><span class="stat-num">70%</span><span class="stat-lbl">Complete</span></div>
+          <div class="stat-cell"><span class="stat-num">Jun '26</span><span class="stat-lbl">Delivery</span></div>
+          <div class="stat-cell"><span class="stat-num">5</span><span class="stat-lbl">Homes in Enclave</span></div>
+          <div class="stat-cell"><span class="stat-num">0</span><span class="stat-lbl">Construction Risk</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery container fade-up">
+    <div class="gallery-grid">
+      <div class="gi"><img src="images/gallery-1.jpg" alt="Villa Sundream — Exterior" /></div>
+      <div class="gi"><img src="images/gallery-2.jpg" alt="Villa Sundream — Pool and Terrace" /></div>
+      <div class="gi"><img src="images/gallery-3.jpg" alt="Villa Sundream — Ocean View" /></div>
+      <div class="gi"><img src="images/gallery-4.jpg" alt="Villa Sundream — Interior Living Area" /></div>
+      <div class="gi"><img src="images/gallery-5.jpg" alt="Villa Sundream — Construction Progress" /></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="features-header fade-up">
+        <div class="eyebrow-inv">Residence Details</div>
+        <h2 class="stitle-inv">Designed for <em>life at the top</em></h2>
+      </div>
+      <div class="features-grid fade-up">
+
+        <!-- Developer card — always highlighted -->
+        <div class="fc dev-card">
+          <span class="fc-icon">🏗</span>
+          <div class="fc-title">Built by Galta — Direct from Developer</div>
+          <p class="fc-desc">This is Galta's own inventory — not an MLS listing. You negotiate directly with the developer. No middlemen, no markup layers, and full accountability on delivery. We've built it, and we stand behind it.</p>
+        </div>
+
+        <div class="fc">
+          <span class="fc-icon">🌅</span>
+          <div class="fc-title">Panoramic Ocean Views</div>
+          <p class="fc-desc">Unobstructed sightlines across Cabo San Lucas Bay, the Marina, and the Pacific Ocean from every level. City lights at night, sunsets from your own terrace.</p>
+        </div>
+        <div class="fc">
+          <span class="fc-icon">🛏</span>
+          <div class="fc-title">7 Bedrooms + Family Room</div>
+          <p class="fc-desc">Each bedroom features its own ensuite bath. All levels connected by a private hydraulic elevator — a rare feature in Pedregal that commands a premium in the resale market.</p>
+        </div>
+        <div class="fc">
+          <span class="fc-icon">🏊</span>
+          <div class="fc-title">Resort-Style Outdoor Living</div>
+          <p class="fc-desc">Private pool, Jacuzzi, fire pit, pergola, and BBQ area on a sun-drenched terrace. Designed for high-capacity entertaining with the Pacific as your backdrop.</p>
+        </div>
+        <div class="fc">
+          <span class="fc-icon">📈</span>
+          <div class="fc-title">Pre-Construction Pricing Window</div>
+          <p class="fc-desc">At 70% completion, you're buying at today's price with a short wait. Upon delivery in June 2026, pricing shifts to finished market value. This window is closing — and it won't reopen.</p>
+        </div>
+        <div class="fc">
+          <span class="fc-icon">🔐</span>
+          <div class="fc-title">Pedregal — The Beverly Hills of Cabo</div>
+          <p class="fc-desc">24/7 guarded access, private beach club, tennis & pickleball courts, organic market, desalination plant, and the only privately owned tunnel in Mexico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS -->
+  <section class="progress-section">
+    <div class="container fade-up">
+      <div class="progress-inner">
+        <div>
+          <div class="eyebrow">Construction Timeline</div>
+          <h2 class="stitle">Delivery<br /><em>June 2026</em></h2>
+          <p class="sbody">
+            At 70% completion, Villa Sundream is far enough along to evaluate finished quality — and early enough that pre-construction pricing still applies. As the developer, we publish our timeline and our progress transparently. No surprises.
+          </p>
+          <div style="margin-top:32px;">
+            <div class="pbar-label">
+              <span>Construction Progress</span>
+              <span style="color:var(--navy);font-weight:500;">70%</span>
+            </div>
+            <div class="pbar-track"><div class="pbar-fill"></div></div>
+          </div>
+        </div>
+        <div class="milestones">
+          <div class="ms done"><div class="ms-dot"></div>Foundation &amp; Structure — Complete</div>
+          <div class="ms done"><div class="ms-dot"></div>Framing &amp; Roofing — Complete</div>
+          <div class="ms done"><div class="ms-dot"></div>Electrical &amp; Plumbing Rough-In — Complete</div>
+          <div class="ms active"><div class="ms-dot"></div>Interior Finishes &amp; Pool — In Progress</div>
+          <div class="ms"><div class="ms-dot"></div>Landscaping &amp; Final Fit-Out</div>
+          <div class="ms"><div class="ms-dot"></div>Delivery &amp; Handover — June 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="amenities">
+    <div class="container fade-up">
+      <div class="eyebrow">Community</div>
+      <h2 class="stitle">Pedregal de Cabo San Lucas</h2>
+      <div class="amenities-grid">
+        <div class="am">Private Beach Club</div>
+        <div class="am">Tennis Courts</div>
+        <div class="am">Pickleball Courts</div>
+        <div class="am">24/7 Guarded Gate</div>
+        <div class="am">Organic Market</div>
+        <div class="am">Desalination Plant</div>
+        <div class="am">Private Tunnel Access</div>
+        <div class="am">Resort at Pedregal</div>
+        <div class="am">5 Min to Marina</div>
+        <div class="am">5 Min to Downtown CSL</div>
+        <div class="am">World-Class Dining Nearby</div>
+        <div class="am">Cobblestone Roads</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location-section">
+    <div class="container fade-up">
+      <div class="location-inner">
+        <div>
+          <div class="eyebrow">Location</div>
+          <h2 class="stitle">The <em>epicenter</em><br />of Cabo luxury</h2>
+          <p class="sbody">
+            Pedregal was Cabo's first luxury development — established in the 1970s on rugged granite hillsides above the marina. Today it remains the city's most coveted address. Galta operates from within Pedregal. We don't just sell here — we live and build here.
+          </p>
+          <div class="locs">
+            <div class="loc"><span class="loc-name">Cabo San Lucas Marina</span><span class="loc-dist">5 min</span></div>
+            <div class="loc"><span class="loc-name">Downtown Cabo San Lucas</span><span class="loc-dist">5 min</span></div>
+            <div class="loc"><span class="loc-name">Los Cabos International Airport</span><span class="loc-dist">~45 min</span></div>
+            <div class="loc"><span class="loc-name">Pedregal Private Beach</span><span class="loc-dist">Within community</span></div>
+            <div class="loc"><span class="loc-name">The Resort at Pedregal</span><span class="loc-dist">Within community</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="map-ph">
+            <span style="font-size:30px;opacity:0.18;">📍</span>
+            <span>Pedregal de Cabo San Lucas</span>
+            <a href="https://maps.google.com/?q=Pedregal+de+Cabo+San+Lucas" target="_blank" rel="noopener">View on Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE + FORM -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-inner fade-up">
+
+        <div>
+          <div class="price-eyebrow">Investment</div>
+          <div class="price-amount">$3,700,000</div>
+          <div class="price-currency">USD — Direct from Developer</div>
+          <p class="price-note">
+            Pre-construction pricing is only available while the property is under development. Upon delivery in June 2026, pricing reflects finished market value. Buying direct from Galta means no broker markup and full developer accountability.
+          </p>
+          <div class="price-hls">
+            <div class="price-hl">Direct from developer — no middlemen</div>
+            <div class="price-hl">70% complete — limited window remaining</div>
+            <div class="price-hl">Delivery June 2026 — short wait, full value</div>
+            <div class="price-hl">One of only 5 homes in the enclave</div>
+            <div class="price-hl">Hydraulic elevator — rare in Pedregal</div>
+            <div class="price-hl">Strong short-term rental income potential</div>
+          </div>
+        </div>
+
+        <div class="form-wrap">
+          <form id="contactForm">
+            <h3 class="form-title">Request a Private Briefing</h3>
+            <p class="form-subtitle">Speak directly with the Galta development team. We respond within 24 hours.</p>
+            <div class="fg">
+              <label for="fname">Full Name</label>
+              <input type="text" id="fname" name="name" placeholder="John Smith" required />
+            </div>
+            <div class="fg">
+              <label for="femail">Email Address</label>
+              <input type="email" id="femail" name="email" placeholder="john@email.com" required />
+            </div>
+            <div class="fg">
+              <label for="fphone">Phone / WhatsApp</label>
+              <input type="tel" id="fphone" name="phone" placeholder="+1 (000) 000-0000" />
+            </div>
+            <div class="fg">
+              <label for="fmsg">Message (optional)</label>
+              <textarea id="fmsg" name="message" placeholder="I'm interested in learning more about Villa Sundream…"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Request →</button>
+            <p class="form-privacy">Your information is private and will never be shared.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">✓</div>
+            <h3>Thank you.</h3>
+            <p>We've received your inquiry. The Galta team will be in touch within 24 hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <img class="footer-logo" src="images/logo-light.png"
+          onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png?format=1500w'"
+          alt="Galta Real Estate" />
+        <div class="footer-contact">
+          MX: <a href="tel:+526241570258">+52 624 157 0258</a> &nbsp;·&nbsp;
+          USA: <a href="tel:+18583313803">+1 (858) 331-3803</a> &nbsp;·&nbsp;
+          <a href="mailto:info@galtarealestate.com">info@galtarealestate.com</a>
+        </div>
+        <div class="footer-copy">© 2026 Galta Real Estate. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a class="wa" href="https://wa.me/526241570258?text=Hi!%20I'm%20interested%20in%20Villa%20Sundream%20in%20Pedregal." target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    // FORM
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = {
+        name:     document.getElementById('fname').value,
+        email:    document.getElementById('femail').value,
+        phone:    document.getElementById('fphone').value,
+        message:  document.getElementById('fmsg').value,
+        property: 'Villa Sundream',
+        source:   'Landing Page — META Ad',
+        date:     new Date().toISOString()
+      };
+
+      // ── CONECTAR BACKEND DEL FORMULARIO ──────────────────────
+      // OPCIÓN A — Formspree (gratis, recomendado):
+      //   1. Crea cuenta en formspree.io
+      //   2. Crea un form y copia el ID
+      //   3. Descomenta estas líneas y pega tu Form ID:
+      //
+      // fetch('https://formspree.io/f/TU_FORM_ID', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      //   body: JSON.stringify(data)
+      // });
+      //
+      // OPCIÓN B — Webhook (Zapier / Make / n8n):
+      // fetch('TU_WEBHOOK_URL', { method: 'POST', body: JSON.stringify(data) });
+      // ─────────────────────────────────────────────────────────
+
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      console.log('Lead captured:', data);
+    });
+
+    // SCROLL FADE-IN
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(el => {
+        if (el.isIntersecting) { el.target.classList.add('visible'); io.unobserve(el.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
