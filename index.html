@@ -226,6 +226,28 @@
     .fc.dev-card { border-top-color: var(--sky); background: var(--navy-mid); }
     .fc.dev-card .fc-desc { color: rgba(255,255,255,0.58); }
 
+    /* ── PROGRESS VIDEO & PHOTO GRID ──── */
+    .progress-video { border-top: 1px solid var(--border); padding-top: 0; }
+    .video-wrap {
+      position: relative; width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0; overflow: hidden;
+      background: var(--navy-mid);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: 0;
+    }
+    .progress-photos { border-top: 1px solid var(--border); padding-top: 0; }
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3px;
+    }
+    .pg-item { overflow: hidden; background: var(--navy-mid); aspect-ratio: 4/3; }
+    .pg-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.55s ease; }
+    .pg-item:hover img { transform: scale(1.05); }
+
     /* ── PROGRESS ─────────────────────── */
     .progress-section { padding: 100px 0; border-bottom: 1px solid var(--border); }
     .progress-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -360,6 +382,7 @@
       .intro-inner, .cta-inner, .progress-inner, .location-inner { grid-template-columns: 1fr; gap: 48px; }
       .features-grid { grid-template-columns: 1fr 1fr; }
       .amenities-grid { grid-template-columns: 1fr 1fr; }
+      .progress-grid { grid-template-columns: 1fr 1fr; }
       .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .gi:first-child { grid-row: auto; }
     }
@@ -439,16 +462,11 @@
   <!-- GALLERY -->
   <section class="gallery container fade-up">
     <div class="gallery-grid">
-      <!-- Large left: render aéreo con letrero Pedregal -->
-      <div class="gi"><img src="images/Sundream_Render_Aereo.jpg" alt="Villa Sundream — Vista aérea Pedregal" /></div>
-      <!-- Top right: render alberca y terraza -->
-      <div class="gi"><img src="images/Sundream_Render_Alberca.jpg" alt="Villa Sundream — Alberca y terraza" /></div>
-      <!-- Mid right: vista real desde la obra -->
-      <div class="gi"><img src="images/Sundream_Vista_Real.jpg" alt="Villa Sundream — Vista real bahía y marina" /></div>
-      <!-- Bottom mid: render fachada posterior -->
-      <div class="gi"><img src="images/Sundream_Render_Fachada_posterior.jpg" alt="Villa Sundream — Fachada posterior render" /></div>
-      <!-- Bottom right: interior real con vista -->
-      <div class="gi"><img src="images/Sundream-24.jpg" alt="Villa Sundream — Interior real con vista a la bahía" /></div>
+      <div class="gi"><img src="images/sundream-1.jpg" alt="Villa Sundream — Fachada exterior" /></div>
+      <div class="gi"><img src="images/sundream-2.jpg" alt="Villa Sundream — Fachada con cielo azul" /></div>
+      <div class="gi"><img src="images/sundream-3.jpg" alt="Villa Sundream — Vista aérea con alberca" /></div>
+      <div class="gi"><img src="images/sundream-4.jpg" alt="Villa Sundream — Interior con vista" /></div>
+      <div class="gi"><img src="images/sundream-5.jpg" alt="Villa Sundream — Cocina y terminados" /></div>
     </div>
   </section>
 
@@ -519,6 +537,35 @@
           <div class="ms active"><div class="ms-dot"></div>Interior Finishes &amp; Pool — In Progress</div>
           <div class="ms"><div class="ms-dot"></div>Landscaping &amp; Final Fit-Out</div>
           <div class="ms"><div class="ms-dot"></div>Delivery &amp; Handover — June 2026</div>
+        </div>
+      </div>
+
+      <!-- VIDEO -->
+      <div class="progress-video fade-up">
+        <div class="eyebrow" style="margin-top:72px;">Site Walk — April 2026</div>
+        <h3 class="stitle" style="font-size:clamp(26px,3vw,38px);margin-bottom:24px;">See the <em>progress for yourself</em></h3>
+        <p class="sbody" style="margin-bottom:32px;max-width:600px;">We believe in full transparency. Watch our most recent site walk — filmed on location at Villa Sundream in April 2026 — and see exactly where the build stands today.</p>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/vUfSziE6x5s"
+            title="Villa Sundream — Site Walk April 2026"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- PROGRESS PHOTO GRID -->
+      <div class="progress-photos fade-up">
+        <div class="eyebrow" style="margin-top:72px;">On-Site Photography — April 2026</div>
+        <h3 class="stitle" style="font-size:clamp(26px,3vw,38px);margin-bottom:40px;">What you see is <em>what you get</em></h3>
+        <div class="progress-grid">
+          <div class="pg-item"><img src="images/sundream-6.jpg" alt="Villa Sundream — Vista aérea de Cabo desde la obra" /></div>
+          <div class="pg-item"><img src="images/sundream-7.jpg" alt="Villa Sundream — Fachada frontal con letrero Pedregal" /></div>
+          <div class="pg-item"><img src="images/sundream-8.jpg" alt="Villa Sundream — Terraza con vista" /></div>
+          <div class="pg-item"><img src="images/sundream-9.jpg" alt="Villa Sundream — Detalle de acabado en cantera" /></div>
         </div>
       </div>
     </div>
