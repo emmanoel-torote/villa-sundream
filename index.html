@@ -70,7 +70,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       background-color: var(--navy-deep);
-      background-image: url('images/Sundream Render Sala.jpg');
+      background-image: url('images/Sundream_Render_Sala.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -720,38 +720,45 @@
   </a>
 
   <script>
-    // FORM
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // FORM — Web3Forms
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const data = {
-        name:     document.getElementById('fname').value,
-        email:    document.getElementById('femail').value,
-        phone:    document.getElementById('fphone').value,
-        message:  document.getElementById('fmsg').value,
-        property: 'Villa Sundream',
-        source:   'Landing Page — META Ad',
-        date:     new Date().toISOString()
+
+      const btn = this.querySelector('.form-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      const payload = {
+        access_key:  '11ba0ce2-f15f-4f88-871b-4466e835e2c5',
+        subject:     'New Lead — Villa Sundream Landing Page',
+        from_name:   'Galta Real Estate Website',
+        name:        document.getElementById('fname').value,
+        email:       document.getElementById('femail').value,
+        phone:       document.getElementById('fphone').value,
+        message:     document.getElementById('fmsg').value,
+        property:    'Villa Sundream — Pedregal, Cabo San Lucas',
+        source:      'Landing Page — META Ad',
+        date:        new Date().toLocaleString('en-US', { timeZone: 'America/Mazatlan' })
       };
 
-      // ── CONECTAR FORMULARIO ──────────────────────────────────
-      // OPCIÓN A — Formspree (gratis, recomendado):
-      //   1. Crea cuenta en formspree.io
-      //   2. Crea un form → copia el ID
-      //   3. Descomenta y pega tu Form ID:
-      //
-      // fetch('https://formspree.io/f/TU_FORM_ID', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      //   body: JSON.stringify(data)
-      // });
-      //
-      // OPCIÓN B — Webhook (Zapier / Make / n8n):
-      // fetch('TU_WEBHOOK_URL', { method: 'POST', body: JSON.stringify(data) });
-      // ────────────────────────────────────────────────────────
-
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-      console.log('Lead captured:', data);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body:    JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          document.getElementById('contactForm').style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.textContent = 'Error — Please try again';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        btn.textContent = 'Error — Please try again';
+        btn.disabled = false;
+      }
     });
 
     // SCROLL FADE-IN
