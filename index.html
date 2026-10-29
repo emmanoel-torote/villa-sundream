@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Villa Sundream — Pedregal, Cabo San Lucas | Galta Real Estate</title>
-  <meta name="description" content="Built by Galta. 7 BD | 9 BA | 4,610 sqft luxury villa in Pedregal. Unobstructed views of Cabo Bay, Marina & Pacific. Pre-construction pricing — $3,700,000 USD." />
+  <meta name="description" content="Built by Galta. 7 BD | 9 BA | 4,610 sqft luxury villa in Pedregal, nearing completion. Unobstructed views of Cabo Bay, Marina & Pacific. $3,700,000 USD." />
 
   <!-- Open Graph / WhatsApp / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://villa-sundream.vercel.app/" />
+  <meta property="og:url" content="https://sundream.galtarealestate.com/" />
   <meta property="og:title" content="Villa Sundream — Pedregal, Cabo San Lucas" />
-  <meta property="og:description" content="Built by Galta. 7 BD | 9 BA | 4,610 sqft. Unobstructed views of Cabo Bay & Marina. Pre-construction pricing — $3,700,000 USD." />
-  <meta property="og:image" content="https://villa-sundream.vercel.app/images/Sundream_Render_Sala.jpg" />
+  <meta property="og:description" content="Built by Galta. 7 BD | 9 BA | 4,610 sqft. Unobstructed views of Cabo Bay & Marina. Nearing completion — $3,700,000 USD." />
+  <meta property="og:image" content="https://sundream.galtarealestate.com/images/Sundream%20October-55.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_US" />
@@ -20,8 +20,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Villa Sundream — Pedregal, Cabo San Lucas" />
-  <meta name="twitter:description" content="Built by Galta. 7 BD | 9 BA | 4,610 sqft. Pre-construction pricing — $3,700,000 USD." />
-  <meta name="twitter:image" content="https://villa-sundream.vercel.app/images/Sundream_Render_Sala.jpg" />
+  <meta name="twitter:description" content="Built by Galta. 7 BD | 9 BA | 4,610 sqft. Nearing completion — $3,700,000 USD." />
+  <meta name="twitter:image" content="https://sundream.galtarealestate.com/images/Sundream%20October-55.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -87,7 +87,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       background-color: var(--navy-deep);
-      background-image: url('images/Sundream Render Sala.jpg');
+      background-image: url('images/Sundream%20October-10.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -397,6 +397,62 @@
     .wa:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.45); }
     .wa svg { width: 26px; height: 26px; fill: #fff; }
 
+    /* ── AGENT TAB + POP-UP ───────────── */
+    .agent-tab {
+      position: fixed; bottom: 28px; left: 28px; z-index: 190;
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--navy); color: var(--white);
+      font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 14px 20px; border: 1px solid rgba(255,255,255,0.28);
+      cursor: pointer; box-shadow: 0 4px 20px rgba(21,31,43,0.28);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .agent-tab::before { content: '✦'; font-size: 8px; color: var(--sky); }
+    .agent-tab:hover { background: var(--navy-mid); border-color: rgba(255,255,255,0.6); }
+    .agent-modal {
+      position: fixed; inset: 0; z-index: 300;
+      display: none; align-items: center; justify-content: center;
+      padding: 24px; background: rgba(21,31,43,0.72);
+    }
+    .agent-modal.open { display: flex; }
+    .agent-card {
+      position: relative; width: 100%; max-width: 520px;
+      max-height: calc(100vh - 48px); overflow-y: auto;
+      background: var(--white); border-top: 3px solid var(--sky);
+      padding: 52px 44px 44px;
+    }
+    .agent-close {
+      position: absolute; top: 12px; right: 14px; width: 40px; height: 40px;
+      background: transparent; border: 0; cursor: pointer;
+      font-size: 28px; line-height: 1; color: var(--text-muted);
+    }
+    .agent-close:hover { color: var(--navy); }
+    .agent-eyebrow { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--sky); margin-bottom: 14px; }
+    .agent-title { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; line-height: 1.1; color: var(--navy); margin-bottom: 22px; }
+    .agent-title em { font-style: italic; color: var(--steel); }
+    .agent-amount { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; color: var(--navy); line-height: 1; margin-bottom: 6px; }
+    .agent-amount-lbl { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 22px; }
+    .agent-text { font-size: 14px; line-height: 1.85; color: var(--text-mid); margin-bottom: 28px; }
+    .agent-actions { display: flex; flex-direction: column; gap: 10px; }
+    .agent-btn {
+      display: block; text-align: center; text-decoration: none;
+      font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase; padding: 16px 24px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .agent-btn.primary { background: var(--navy); color: var(--white); border: 1px solid var(--navy); }
+    .agent-btn.primary:hover { background: var(--navy-lt); }
+    .agent-btn.secondary { background: transparent; color: var(--navy); border: 1px solid var(--navy); }
+    .agent-btn.secondary:hover { background: var(--navy); color: var(--white); }
+    @media (max-width: 600px) {
+      .agent-tab { bottom: 20px; left: 16px; padding: 12px 16px; font-size: 9px; letter-spacing: 0.16em; }
+      .agent-modal { padding: 16px; }
+      .agent-card { padding: 48px 24px 32px; }
+      .agent-title { font-size: 28px; }
+      .agent-amount { font-size: 38px; }
+    }
+
     /* ── ANIMATIONS ───────────────────── */
     .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -446,13 +502,13 @@
     <a class="topbar-cta" href="#contact">Request a Private Briefing</a>
   </nav>
 
-  <!-- HERO — Render sala con vista al mar -->
+  <!-- HERO — Vista a la bahía -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-inner">
       <div class="hero-eyebrow">Pedregal de Cabo San Lucas &nbsp;·&nbsp; Built by Galta</div>
       <h1 class="hero-title">Villa<br /><em>Sundream</em></h1>
-      <p class="hero-tagline">We build what we sell — zero construction risk, proven delivery</p>
+      <p class="hero-tagline">Designed and built by Galta — nearing completion</p>
       <div class="hero-specs">
         <div class="hs"><span class="hs-val">7</span><span class="hs-key">Bedrooms</span></div>
         <div class="hs"><span class="hs-val">9</span><span class="hs-key">Bathrooms</span></div>
@@ -473,21 +529,21 @@
       <div class="intro-inner">
         <div>
           <div class="eyebrow">The Opportunity</div>
-          <h2 class="stitle">Not a listing.<br /><em>Our own build.</em></h2>
+          <h2 class="stitle">Our own build,<br /><em>nearing completion.</em></h2>
           <p class="sbody">
-            Villa Sundream is a Galta-built residence — not a third-party listing. We designed it, we're constructing it, and we stand behind every detail of its delivery. When you buy from us, you buy direct from the developer: full transparency on costs, timelines, and quality.
+            Villa Sundream is a Galta-built residence. We designed it, we're constructing it, and we stand behind every detail of its delivery. Working with the developer means full transparency on timelines and quality.
           </p>
           <br />
           <p class="sbody">
-            Positioned just below the iconic Pedregal sign, the villa commands unobstructed panoramic views of Cabo San Lucas Bay, the Marina, and the Pacific. Villa Sundream is part of what we call The Ridge at Pedregal — a private cluster of five architect-designed residences sharing one of the most privileged positions in the community, and one of the last opportunities to enter at pre-construction pricing.
+            Positioned just below the iconic Pedregal sign, the villa commands unobstructed panoramic views of Cabo San Lucas Bay, the Marina, and the Pacific. Villa Sundream is part of what we call The Ridge at Pedregal — a private cluster of five architect-designed residences sharing one of the most privileged positions in the community.
           </p>
-          <div class="dev-badge">Built &amp; Sold Directly by Galta Real Estate</div>
+          <div class="dev-badge">Built by Galta Real Estate</div>
         </div>
         <div class="stat-grid">
-          <div class="stat-cell"><span class="stat-num">70%</span><span class="stat-lbl">Complete</span></div>
-          <div class="stat-cell"><span class="stat-num">Jun '26</span><span class="stat-lbl">Delivery</span></div>
+          <div class="stat-cell"><span class="stat-num">Oct '26</span><span class="stat-lbl">Latest Update</span></div>
+          <div class="stat-cell"><span class="stat-num">Final</span><span class="stat-lbl">Details Underway</span></div>
           <div class="stat-cell"><span class="stat-num">5</span><span class="stat-lbl">Homes — The Ridge at Pedregal</span></div>
-          <div class="stat-cell"><span class="stat-num">0</span><span class="stat-lbl">Construction Risk</span></div>
+          <div class="stat-cell"><span class="stat-num">840 m²</span><span class="stat-lbl">Lot Size</span></div>
         </div>
       </div>
     </div>
@@ -496,11 +552,11 @@
   <!-- GALLERY -->
   <section class="gallery container fade-up">
     <div class="gallery-grid">
-      <div class="gi"><img src="images/Sundream-1.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Fachada exterior" /></div>
-      <div class="gi"><img src="images/Sundream-2.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Fachada con cielo azul" /></div>
-      <div class="gi"><img src="images/Sundream-3.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Vista aérea con alberca" /></div>
-      <div class="gi"><img src="images/Sundream-4.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Interior con vista" /></div>
-      <div class="gi"><img src="images/Sundream-5.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Cocina y terminados" /></div>
+      <div class="gi"><img src="images/Sundream%20October-55.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Residence facade with pool and terrace" /></div>
+      <div class="gi"><img src="images/Sundream%20October-14.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Infinity pool with fire pit and hillside views" /></div>
+      <div class="gi"><img src="images/Sundream%20October-44.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Living room opening to the terrace and bay" /></div>
+      <div class="gi"><img src="images/Sundream%20October-39.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Kitchen with waterfall island" /></div>
+      <div class="gi"><img src="images/Sundream%20October-4.jpg" onerror="this.src='https://images.squarespace-cdn.com/content/v1/65de348dddd00a454b316acf/1beb801e-6ee0-4b79-b40b-5246b2749751/Logo+Para+Website+Horizontal+%2819%29.png'" alt="Villa Sundream — Terrace view of the Bay and Marina" /></div>
     </div>
   </section>
 
@@ -514,8 +570,8 @@
       <div class="features-grid fade-up">
         <div class="fc dev-card">
           <span class="fc-icon">🏗</span>
-          <div class="fc-title">Built by Galta — Direct from Developer</div>
-          <p class="fc-desc">This is Galta's own inventory — not an MLS listing. You negotiate directly with the developer. No middlemen, full accountability on delivery. We built it, and we stand behind it.</p>
+          <div class="fc-title">Built by Galta — Developer-Backed</div>
+          <p class="fc-desc">This is Galta's own development. You work with the team that designed and built it, with full accountability on delivery. We built it, and we stand behind it.</p>
         </div>
         <div class="fc">
           <span class="fc-icon">🌅</span>
@@ -533,9 +589,9 @@
           <p class="fc-desc">Private pool, Jacuzzi, fire pit, pergola, and BBQ area on a sun-drenched terrace. Designed for high-capacity entertaining with the Pacific as your backdrop.</p>
         </div>
         <div class="fc">
-          <span class="fc-icon">📈</span>
-          <div class="fc-title">Pre-Construction Pricing Window</div>
-          <p class="fc-desc">At 70% completion, you're buying at today's price with a short wait. Upon delivery in June 2026, pricing shifts to finished market value. This window is closing.</p>
+          <span class="fc-icon">🔑</span>
+          <div class="fc-title">Nearing Completion</div>
+          <p class="fc-desc">The architecture, finishes, and pool are in place, with final details now underway. Schedule a private visit to experience the residence in person.</p>
         </div>
         <div class="fc">
           <span class="fc-icon">🔐</span>
@@ -552,37 +608,30 @@
       <div class="progress-inner">
         <div>
           <div class="eyebrow">Construction Timeline</div>
-          <h2 class="stitle">Delivery<br /><em>June 2026</em></h2>
+          <h2 class="stitle">Nearing<br /><em>completion</em></h2>
           <p class="sbody">
-            At 70% completion, Villa Sundream is far enough along to evaluate finished quality — and early enough that pre-construction pricing still applies. As the developer, we publish our timeline and progress transparently. No surprises.
+            Villa Sundream is far enough along to evaluate its finished quality in person. As the developer, we share our progress transparently with every update.
           </p>
-          <div style="margin-top:32px;">
-            <div class="pbar-label">
-              <span>Construction Progress</span>
-              <span style="color:var(--navy);font-weight:500;">70%</span>
-            </div>
-            <div class="pbar-track"><div class="pbar-fill"></div></div>
-          </div>
         </div>
         <div class="milestones">
           <div class="ms done"><div class="ms-dot"></div>Foundation &amp; Structure — Complete</div>
           <div class="ms done"><div class="ms-dot"></div>Framing &amp; Roofing — Complete</div>
           <div class="ms done"><div class="ms-dot"></div>Electrical &amp; Plumbing Rough-In — Complete</div>
-          <div class="ms active"><div class="ms-dot"></div>Interior Finishes &amp; Pool — In Progress</div>
-          <div class="ms"><div class="ms-dot"></div>Landscaping &amp; Final Fit-Out</div>
-          <div class="ms"><div class="ms-dot"></div>Delivery &amp; Handover — June 2026</div>
+          <div class="ms active"><div class="ms-dot"></div>Interior Finishes, Pool &amp; Final Details — In Progress</div>
+          <div class="ms"><div class="ms-dot"></div>Landscaping, Driveway &amp; Final Fit-Out</div>
+          <div class="ms"><div class="ms-dot"></div>Delivery &amp; Handover — Coming Soon</div>
         </div>
       </div>
 
       <!-- VIDEO -->
       <div class="progress-video fade-up">
-        <div class="eyebrow" style="margin-top:72px;">Site Walk — April 2026</div>
+        <div class="eyebrow" style="margin-top:72px;">Construction Update — July 2026</div>
         <h3 class="stitle" style="font-size:clamp(26px,3vw,38px);margin-bottom:24px;">See the <em>progress for yourself</em></h3>
-        <p class="sbody" style="margin-bottom:32px;max-width:600px;">We believe in full transparency. Watch our most recent site walk — filmed on location at Villa Sundream in April 2026 — and see exactly where the build stands today.</p>
+        <p class="sbody" style="margin-bottom:32px;max-width:600px;">We believe in full transparency. Watch our latest construction update, filmed on location at Villa Sundream, and see how the residence has come to life.</p>
         <div class="video-wrap">
           <iframe
-            src="https://www.youtube.com/embed/vUfSziE6x5s"
-            title="Villa Sundream — Site Walk April 2026"
+            src="https://www.youtube.com/embed/z3OyOh62t_A"
+            title="Villa Sundream — Construction Update July 2026"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -593,13 +642,13 @@
 
       <!-- PROGRESS PHOTO GRID -->
       <div class="progress-photos fade-up">
-        <div class="eyebrow" style="margin-top:72px;">On-Site Photography — April 2026</div>
+        <div class="eyebrow" style="margin-top:72px;">On-Site Photography — October 2026</div>
         <h3 class="stitle" style="font-size:clamp(26px,3vw,38px);margin-bottom:40px;">What you see is <em>what you get</em></h3>
         <div class="progress-grid">
-          <div class="pg-item"><img src="images/Sundream-6.jpg" alt="Villa Sundream — Vista aérea de Cabo desde la obra" /></div>
-          <div class="pg-item"><img src="images/Sundream-7.jpg" alt="Villa Sundream — Fachada frontal con letrero Pedregal" /></div>
-          <div class="pg-item"><img src="images/Sundream-8.jpg" alt="Villa Sundream — Terraza con vista" /></div>
-          <div class="pg-item"><img src="images/Sundream-9.jpg" alt="Villa Sundream — Detalle de acabado en cantera" /></div>
+          <div class="pg-item"><img src="images/Sundream%20October-8.jpg" alt="Villa Sundream — Primary bath with freestanding tub and bay view" /></div>
+          <div class="pg-item"><img src="images/Sundream%20October-21.jpg" alt="Villa Sundream — Courtyard with linear fireplace" /></div>
+          <div class="pg-item"><img src="images/Sundream%20October-46.jpg" alt="Villa Sundream — Terrace with pergola and outdoor kitchen" /></div>
+          <div class="pg-item"><img src="images/Sundream%20October-49.jpg" alt="Villa Sundream — Aerial view of the terraces and pool" /></div>
         </div>
       </div>
     </div>
@@ -666,14 +715,14 @@
         <div>
           <div class="price-eyebrow">Investment</div>
           <div class="price-amount">$3,700,000</div>
-          <div class="price-currency">USD — Direct from Developer</div>
+          <div class="price-currency">USD — Built by Galta</div>
           <p class="price-note">
-            Pre-construction pricing is only available while under development. Upon delivery in June 2026, pricing reflects finished market value. Buying direct from Galta means no broker markup and full developer accountability.
+            Villa Sundream is nearing completion, with final details underway. Schedule a private visit to experience the residence, its views, and its position in Pedregal in person.
           </p>
           <div class="price-hls">
-            <div class="price-hl">Direct from developer — no middlemen</div>
-            <div class="price-hl">70% complete — limited window remaining</div>
-            <div class="price-hl">Delivery June 2026 — short wait, full value</div>
+            <div class="price-hl">Built and backed by the developer</div>
+            <div class="price-hl">Nearing completion — final details underway</div>
+            <div class="price-hl">Private visits available by appointment</div>
             <div class="price-hl">One of only 5 homes — The Ridge at Pedregal</div>
             <div class="price-hl">Hydraulic elevator across 3 levels — rare in Pedregal</div>
             <div class="price-hl">Strong short-term rental income potential</div>
@@ -742,6 +791,23 @@
     </svg>
   </a>
 
+  <!-- AGENT BONUS (tab + pop-up). Remove this block and the "AGENT POP-UP" script to hide it. -->
+  <button type="button" class="agent-tab" id="agentTab" aria-haspopup="dialog" aria-controls="agentModal">For Agents</button>
+  <div class="agent-modal" id="agentModal" role="dialog" aria-modal="true" aria-labelledby="agentTitle" aria-hidden="true">
+    <div class="agent-card">
+      <button type="button" class="agent-close" id="agentClose" aria-label="Close">&times;</button>
+      <div class="agent-eyebrow">For Real Estate Professionals</div>
+      <h3 class="agent-title" id="agentTitle">Agent partners <em>welcome</em></h3>
+      <div class="agent-amount">$15,000 USD</div>
+      <div class="agent-amount-lbl">Buyer's Agent Bonus</div>
+      <p class="agent-text">Villa Sundream is open to co-broke partners. A $15,000 USD buyer's agent bonus is offered on this residence. Reach out to arrange a private showing for your client and to receive the details.</p>
+      <div class="agent-actions">
+        <a class="agent-btn primary" href="mailto:info@galtarealestate.com?subject=Villa%20Sundream%20-%20Agent%20Inquiry&body=Hello,%20I'm%20a%20real%20estate%20agent%20interested%20in%20Villa%20Sundream%20and%20the%20buyer's%20agent%20bonus.">Email the Galta Team</a>
+        <a class="agent-btn secondary" href="https://wa.me/526241570258?text=Hi!%20I'm%20a%20real%20estate%20agent%20and%20would%20like%20details%20about%20Villa%20Sundream%20and%20the%20buyer's%20agent%20bonus." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
   <script>
     // FORM — Web3Forms
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
@@ -783,6 +849,38 @@
         btn.disabled = false;
       }
     });
+
+    // AGENT POP-UP — opens from the "For Agents" tab or from the link .../#agents
+    (function () {
+      const modal = document.getElementById('agentModal');
+      const tab = document.getElementById('agentTab');
+      const closeBtn = document.getElementById('agentClose');
+      let lastFocus = null;
+      function openModal() {
+        lastFocus = document.activeElement;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+        if (location.hash === '#agents') {
+          try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+        }
+      }
+      tab.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+      });
+      if (location.hash === '#agents') openModal();
+      window.addEventListener('hashchange', function () { if (location.hash === '#agents') openModal(); });
+    })();
 
     // SCROLL FADE-IN
     const io = new IntersectionObserver((entries) => {
